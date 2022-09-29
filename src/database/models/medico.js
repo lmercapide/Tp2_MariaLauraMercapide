@@ -1,41 +1,40 @@
 'use strict'
 
-const { DataTypes } = require("sequelize")
 
-module.exports = (sequelize, dataTypes) => {
+module.exports = (sequelize, DataTypes) => {
 
     let Medico = sequelize.define('medico', {
         
         id: {
-            type: dataTypes.BIGINT,
-            autoincrement:true,
-            primarykey: true,
-            allownull: false
+            type: DataTypes.BIGINT,
+            autoIncrement:true,
+            primaryKey: true,
+            allowNull: false
         },
         nombre: {
-            type: dataTypes.STRING,
-            allownull: false
+            type: DataTypes.STRING,
+            allowNull: false
         },
         dni: {
-            type: dataTypes.INTEGER,
-            allownull: false
+            type: DataTypes.INTEGER,
+            allowNull: false
         },
         createdAt: {
-            type: dataTypes.DATE,
-            field: created_at,
-            defaultValue: dataTypes.NOW,
+            type: DataTypes.DATE,
+            field: 'created_at',
+            defaultValue: DataTypes.NOW,
             allowNull: false
         },
         updateAt: {
-            type: dataTypes.DATE,
-            field: updated_at,
-            defaultValue: dataTypes.NOW,
+            type: DataTypes.DATE,
+            field: 'updated_at',
+            defaultValue: DataTypes.NOW,
             allowNull: false
         },
         deletedAt: {
-            type: dataTypes.DATE,
-            field: deleted_at,
-            defaultValue: dataTypes.NOW,
+            type: DataTypes.DATE,
+            field: 'deleted_at',
+            defaultValue: DataTypes.NOW,
             allowNull: false
         }
       
@@ -43,7 +42,8 @@ module.exports = (sequelize, dataTypes) => {
         freezeTableName: true,
     })
  
-     Medico.HasMany = models => {
+    Medico.associate = models => {
+    // Medico.HasMany = models => {
     }
     return Medico
 
