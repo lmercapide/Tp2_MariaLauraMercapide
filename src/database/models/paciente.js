@@ -38,7 +38,6 @@ module.exports = (sequelize, DataTypes) => {
             defaultValue: DataTypes.NOW,
             allowNull: false
         }
-      
      }, { paranoid: true,
         freezeTableName: true,
     })
