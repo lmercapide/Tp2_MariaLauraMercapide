@@ -19,11 +19,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lmercapide/Tp2_MariaLaura.git"
+    "url": "git+https://github.com/lmercapide/Tp2_MariaLauraMercapide.git"
   },
   "bugs": {
-    "url": "https://github.com/lmercapide/Tp2_MariaLaura/issues"
+    "url": "https://github.com/lmercapide/Tp2_MariaLauraMercapide/issues"
   },
-  "homepage": "https://github.com/lmercapide/Tp2_MariaLaura#readme",
+  "homepage": "https://github.com/lmercapide/Tp2_MariaLauraMercapide#readme",
   "description": ""
 }
