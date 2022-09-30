@@ -1,26 +1,49 @@
+const { UPSERT } = require('sequelize/types/query-types')
 const models = require('../database/models/index')
 
 module.exports = {
 
     listar: async(req, res) => {
 
+        const paci = await models.paciente.findAll()
+            
+        res.json({
+            sucess: true,
+            data: {
+
+                pacientes: paci
+            }
+
+
+        })
+
 
     },
-    crear: async(req, res) => {
 
-        
+    crear: async(req, res) => {
+       
     },
     listarInfo: async(req, res) => {
+                const paci = await models.paciente.create(req.body)
 
-        
-    },
+                res.json({
+
+                        success: true,
+                        data:{
+
+                                id: paci.id
+                        }
+                
+                 })
+    
+   },
     prueba: async(req, res) => {
-                try {
-
+                try { 
+                    
                     console.log(`Ejecutando listado de Pacientes desde puerto`)
                     res.json({
-                      
-                        message: "Listado de Pacientes"
+                    
+                        message: "Listado de Medicos"
 
                     })
                 } catch (err){
@@ -28,7 +51,7 @@ module.exports = {
 
 
                 }
-     },
+    },
         
     }
 

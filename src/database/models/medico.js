@@ -1,49 +1,49 @@
 'use strict'
 
-const { DataTypes } = require("sequelize")
 
-module.exports = (sequelize, dataTypes) => {
+
+module.exports = (sequelize, DataTypes) => {
 
     let Medico = sequelize.define('medico', {
         
         id: {
-            type: dataTypes.BIGINT,
-            autoincrement:true,
-            primarykey: true,
-            allownull: false
+            type: DataTypes.BIGINT,
+            autoIncrement:true,
+            primaryKey: true,
+            allowNull: false
         },
         nombre: {
-            type: dataTypes.STRING,
+            type: DataTypes.STRING,
             allownull: false
         },
         dni: {
-            type: dataTypes.INTEGER,
-            allownull: false
+            type: DataTypes.INTEGER,
+            allowNull: false
         },
         createdAt: {
-            type: dataTypes.DATE,
+            type: DataTypes.DATE,
             field: 'created_at',
-            defaultValue: dataTypes.NOW,
+            defaultValue: DataTypes.NOW,
             allowNull: false
         },
         updateAt: {
-            type: dataTypes.DATE,
+            type: DataTypes.DATE,
             field: 'updated_at',
-            defaultValue: dataTypes.NOW,
+            defaultValue: DataTypes.NOW,
             allowNull: false
         },
         deletedAt: {
-            type: dataTypes.DATE,
+            type: DataTypes.DATE,
             field: 'deleted_at',
-            defaultValue: dataTypes.NOW,
+            defaultValue: DataTypes.NOW,
             allowNull: false
         }
       
      }, { paranoid: true,
         freezeTableName: true,
     })
- 
-     Medico.HasMany = models => {
+    Medico.association = models => {
+     //Medico.HasMany = models => {
     }
     return Medico
 

@@ -1,37 +1,35 @@
 'use strict'
 
-const { DataTypes } = require("sequelize")
-
-module.exports = (sequelize, dataTypes) => {
+module.exports = (sequelize, DataTypes) => {
 
     let Tratamiento = sequelize.define('tratamiento', {
         
         id: {
-            type: dataTypes.BIGINT,
-            autoincrement:true,
-            primarykey: true,
-            allownull: false
+            type: DataTypes.BIGINT,
+            autoIncrement:true,
+            primaryKey: true,
+            allowNull: false
         },
         nombre: {
-            type: dataTypes.STRING,
-            allownull: false
+            type: DataTypes.STRING,
+            allowNull: false
         },        
         createdAt: {
-            type: dataTypes.DATE,
+            type: DataTypes.DATE,
             field: 'created_at',
-            defaultValue: dataTypes.NOW,
+            defaultValue: DataTypes.NOW,
             allowNull: false
         },
         updateAt: {
-            type: dataTypes.DATE,
+            type: DataTypes.DATE,
             field: 'updated_at',
-            defaultValue: dataTypes.NOW,
+            defaultValue: DataTypes.NOW,
             allowNull: false
         },
         deletedAt: {
-            type: dataTypes.DATE,
+            type: DataTypes.DATE,
             field: 'deleted_at',
-            defaultValue: dataTypes.NOW,
+            defaultValue: DataTypes.NOW,
             allowNull: false
         }
       
@@ -39,7 +37,7 @@ module.exports = (sequelize, dataTypes) => {
         freezeTableName: true,
     })
  
-     Tratamiento.HasMany = models => {
+     Tratamiento.Associations = models => {
     }
     return Tratamiento
 
